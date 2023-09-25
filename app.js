@@ -1,24 +1,17 @@
-const a = 10;
-var b = 20;
-b = 40;
-const name = "Manish"
-const sum = a + b 
-// console.log(sum)
+const app =require("express")()
+// alt const express =required("express")
+//const app = express()
 
-// array
-const numbers = [10,20,30] 
-// console.log(numbers[1])
-// to calculate length of array 
-// console.log(numbers.length)
+app.get("/",(req,res)=>{
+    res.send("Hello from home page")
+})
 
-// objects
-const person = {
-    name : "Manish",
-    age : 21
-}
-// {key:value}
-console.log("This is person Name " +  person.name)
-console.log(person.age)
-
-
-// console.log("Welcome to NodeJs")
+app.get("/about",(req,res)=>{
+    // res.send("Hello from about page")
+    res.json({
+        "greetings" : "hello i am bibash"
+    })
+})
+app.listen(2000,(req,res)=>{
+    console.log("Nodejs has started at the port 2000")
+})
